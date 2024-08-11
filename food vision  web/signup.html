@@ -10,12 +10,41 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
-        <!-- Navigation content -->
-    </nav> 
+        <div class="container" >
+          
+            <a class="navbar-brand fs-4" href="#">
+              <img src="image/favicon.png" alt="Logo" width="40" height="36" class="d-inline-block align-text-top ">
+              Food Vision
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-3 mb-lg-0 gap-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item"  >
+                <a class="nav-link" href="signup.html">Signup</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
 
     <div class="logdetail">
         <div class="container1">
-            <h1 id="title">Email <br>Verification</h1>
+            <h1 id="title">OTP Verification</h1>
             <h5 id="title2">Enter your email address</h5>
             <p id="title3"><b>You will receive an OTP to your email</b></p>
             <form id="emailForm">
@@ -32,6 +61,9 @@
     </div>
 
     <script>
+        // Clear localStorage when the signup page loads
+        localStorage.removeItem('userEmail');
+
         document.getElementById('emailForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting the traditional way
 
@@ -44,7 +76,7 @@
                 errorMessage.style.display = 'inline';
             } else {
                 errorMessage.style.display = 'none';
-                // Store email in localStorage
+                // Store email in localStorage only if it's valid
                 localStorage.setItem('userEmail', emailInput);
                 // Redirect to OTP verification page
                 window.location.href = "otpverify.html";

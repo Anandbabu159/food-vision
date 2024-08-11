@@ -1,3 +1,120 @@
+.logdetail{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    background-color: yellow;
+    height: 620px;
+    padding-top: 80px;
+    text-align: center;
+   
+}
 .container1{
+    background-color: antiquewhite;
+    align-content: center;
+    justify-content: center;
+    height:450px;
+    border-radius: 10px;
+    width:500px
+   }
+
+   .container2{
+    background-color: antiquewhite;
+    align-content: center;
+    justify-content: center;
+    height:450px;
+    border-radius: 10px;
+    width:500px
+   }
+
+
+#title{
+    display: flex;
+    justify-content: center;
+    }
+
+#title2{
+
+    display:flex;
+    justify-content: center;
+}
+
+#title3{
+
+    display:flex;
+    justify-content: center;
+}
+
+.inputbox{
+
+    display:flex;
+    justify-content: center;
+    height:40px;
+    font-size: 15px;
+    border:1px solid wheat; 
+    width:380px;
+    margin-left: 60px;
+    
+}
+
+.button{
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 30px;
+    
+}
+#buttonchild{
+    background: skyblue;
+    width:150px;
+    border-radius: 30px;
+
 
 }
+
+.OTP-FORM{
+    display:flex;
+    justify-content: center;
+}
+
+#usermail{
+    width:380px;
+}
+::placeholder{
+    text-align: center;
+}
+.otpform{
+    display: block;
+    margin:20px 0;
+}
+
+.otpform p{
+margin: 20px;
+color: green;
+
+}
+
+.otpgroup{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 20px;
+    
+}
+.otpgroup input{
+    height: 50px;
+    width: 50px;
+    padding:2px;
+    font-size: 25px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin:0;
+}
+ 

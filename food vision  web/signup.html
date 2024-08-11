@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Vision - Signup</title>
+    <link rel="icon" href="image/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+        <!-- Navigation content -->
+    </nav> 
+
+    <div class="logdetail">
+        <div class="container1">
+            <h1 id="title">Email <br>Verification</h1>
+            <h5 id="title2">Enter your email address</h5>
+            <p id="title3"><b>You will receive an OTP to your email</b></p>
+            <form id="emailForm">
+                <div class="inputbox">
+                    <input type="email" name="email" id="usermail" placeholder="Enter Email Address" required>
+                    <span id="error-message" class="error"></span>
+                </div>
+                <br>
+                <div class="button">
+                    <button type="submit" id="buttonchild">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+
+            const emailInput = document.getElementById('usermail').value.trim();
+            const errorMessage = document.getElementById('error-message');
+
+            // Validate email
+            if (!validateEmail(emailInput)) {
+                errorMessage.textContent = 'Please enter a valid email address.';
+                errorMessage.style.display = 'inline';
+            } else {
+                errorMessage.style.display = 'none';
+                // Store email in localStorage
+                localStorage.setItem('userEmail', emailInput);
+                // Redirect to OTP verification page
+                window.location.href = "otpverify.html";
+            }
+        });
+
+        function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+    </script>
+</body>
+</html>
